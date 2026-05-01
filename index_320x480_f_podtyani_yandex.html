@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="ad.size" content="width=320,height=480" />
+    <title>Banner 320x480</title>
+    <style>
+      @font-face {
+        font-family: "Grato Grotesk CY";
+        src: url("data:font/woff;base64,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") format("woff");
+        font-style: normal;
+        font-weight: 700;
+      }
+
+      html, body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: transparent;
+      }
+
+      #click_area {
+        position: relative;
+        display: block;
+        width: 320px;
+        height: 480px;
+        overflow: hidden;
+        cursor: pointer;
+        text-decoration: none;
+        background: #00b923;
+      }
+
+      .ellipse {
+        position: absolute;
+        left: 27.77px;
+        top: 59.5px;
+        width: 353px;
+        height: 353px;
+      }
+
+      .model {
+        position: absolute;
+        left: 88px;
+        top: 62px;
+        width: 243.14px;
+        height: 362.45px;
+        object-fit: contain;
+      }
+
+      .footer-gradient {
+        position: absolute;
+        right: 0;
+        bottom: 43px;
+        width: 319px;
+        height: 173.043px;
+        object-fit: cover;
+      }
+
+      .leg-fade {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 280px;
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 185, 35, 0) 0%,
+          rgba(0, 185, 35, 0.55) 38%,
+          #00b923 72%
+        );
+      }
+
+      .logo { position: absolute; left: 25px; top: 25px; width: 136.29px; height: 33.98px; }
+      .offer {
+        position: absolute;
+        left: 62px;
+        top: 72px;
+        width: 98.486px;
+        height: 70.915px;
+        transform-origin: 50% 50%;
+        animation: offerShake 11s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
+        z-index: 3;
+      }
+      .preheader { position: absolute; left: 25px; top: 234px; width: 128px; height: 36px; }
+      .hero { position: absolute; left: 25px; top: 334px; width: 253.08px; height: 76px; }
+      .cta {
+        position: absolute;
+        left: 25px;
+        top: 412px;
+        width: 270px;
+        height: 43px;
+        transform-origin: 50% 50%;
+        animation: ctaPulse 2.2s ease-in-out infinite alternate;
+      }
+
+      .countdown {
+        position: absolute;
+        left: 25px;
+        top: 278.96px;
+        display: flex;
+        gap: 0;
+      }
+
+      .count-number-box,
+      .count-label-box {
+        height: 44.064px;
+        border-radius: 8.929px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .count-number-box {
+        width: 54.233px;
+        height: 48.313px;
+        background: url("assets/count-bg-number.svg") 0 0 / 100% 100% no-repeat;
+      }
+
+      .count-label-box {
+        width: 82.062px;
+        height: 48.313px;
+        margin-left: 4.057px;
+        padding: 0;
+        background: url("assets/count-bg-word.svg") 0 0 / 100% 100% no-repeat;
+      }
+
+      .day-digit {
+        position: static;
+        transform: none;
+        color: #0f4128;
+        font-family: "Grato Grotesk CY", "Arial Black", Arial, sans-serif;
+        font-weight: 700;
+        font-size: 27.554px;
+        line-height: 1;
+        text-align: center;
+        white-space: nowrap;
+        backface-visibility: hidden;
+      }
+
+      .day-number {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+      }
+
+      .digit-slot {
+        position: relative;
+        width: 0.68em;
+        height: 1em;
+        overflow: hidden;
+      }
+
+      .digit-char {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        line-height: 1;
+      }
+
+      .digit-char.is-out {
+        animation: digitOut 520ms ease forwards;
+      }
+
+      .digit-char.is-in {
+        animation: digitIn 520ms ease forwards;
+      }
+
+      .dish {
+        position: absolute;
+        left: 16px;
+        top: 98px;
+        width: 140px;
+        height: 103px;
+        object-fit: contain;
+        transform: rotate(-5deg);
+      }
+
+
+      #daysLabel {
+        font-family: "Grato Grotesk CY", sans-serif !important;
+        font-weight: 700;
+        font-style: normal;
+        position: relative;
+        top: -3px;
+      }
+
+      #daysNumber {
+        text-align: center;
+        font-family: "Grato Grotesk CY", sans-serif !important;
+        font-weight: 700;
+        font-style: normal;
+        position: relative;
+        top: -1px;
+      }
+
+      @keyframes ctaPulse {
+        from { transform: scale(1); }
+        to { transform: scale(1.012); }
+      }
+
+      @keyframes offerShake {
+        0%, 55%, 100% { transform: rotate(0deg); }
+        63% { transform: rotate(-1.4deg); }
+        71% { transform: rotate(1.4deg); }
+        79% { transform: rotate(-0.9deg); }
+        87% { transform: rotate(0.9deg); }
+      }
+
+      @keyframes digitOut {
+        from {
+          opacity: 1;
+          transform: translate(-50%, -50%);
+        }
+        to {
+          opacity: 0;
+          transform: translate(-50%, -130%);
+        }
+      }
+
+      @keyframes digitIn {
+        from {
+          opacity: 0;
+          transform: translate(-50%, 30%);
+        }
+        to {
+          opacity: 1;
+          transform: translate(-50%, -50%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a id="click_area" href="%link1%" target="_blank" rel="noopener" aria-label="Перейти на сайт GrowFood">
+      <img class="ellipse" src="assets/ellipse.svg" alt="" />
+      <img class="model" src="assets/female-model.png" alt="" />
+      <img class="footer-gradient" src="assets/footer-background.svg" alt="" />
+      <div class="leg-fade"></div>
+      <img class="logo" src="assets/logo.svg" alt="GrowFood" />
+      <img class="offer" src="assets/offer.svg" alt="" />
+      <img class="preheader" src="assets/preheader.svg" alt="" />
+      <div class="countdown">
+        <div class="count-number-box">
+          <span class="day-digit day-number" id="daysNumber"></span>
+        </div>
+        <div class="count-label-box">
+          <span class="day-digit" id="daysLabel">дней</span>
+        </div>
+      </div>
+      <img class="hero" src="assets/podtyani-hero-text.svg" alt="" />
+      <img class="dish" src="assets/female-dish-77-1.png" alt="" />
+      <img class="cta" src="assets/cta.svg" alt="" />
+    </a>
+    <script>
+      (function () {
+        var daysNumberNode = document.getElementById("daysNumber");
+        var daysLabelNode = document.getElementById("daysLabel");
+        var START_ANIMATION_VALUE = 40;
+        var TARGET_SUMMER_DATE = new Date(2026, 5, 1, 0, 0, 0, 0);
+        var MS_PER_DAY = 24 * 60 * 60 * 1000;
+        var TIMER_STEP_MS = 2000;
+
+        function getRussianDayWord(value) {
+          var n = Math.abs(value) % 100;
+          var n1 = n % 10;
+          if (n > 10 && n < 20) return "дней";
+          if (n1 > 1 && n1 < 5) return "дня";
+          if (n1 === 1) return "день";
+          return "дней";
+        }
+
+        function getDigits(value) {
+          var normalized = isFinite(value) ? Math.max(0, Math.floor(value)) : START_ANIMATION_VALUE;
+          return String(normalized).padStart(2, "0").slice(-2).split("");
+        }
+
+        function createDigitNode(value) {
+          var node = document.createElement("span");
+          node.className = "digit-char";
+          node.textContent = value;
+          return node;
+        }
+
+        function ensureDigitSlots() {
+          if (!daysNumberNode) return null;
+          var slots = daysNumberNode.querySelectorAll(".digit-slot");
+          if (slots.length === 2) return slots;
+          daysNumberNode.innerHTML = "";
+          for (var i = 0; i < 2; i += 1) {
+            var slot = document.createElement("span");
+            slot.className = "digit-slot";
+            var initial = createDigitNode("0");
+            initial.classList.add("is-current");
+            slot.appendChild(initial);
+            daysNumberNode.appendChild(slot);
+          }
+          return daysNumberNode.querySelectorAll(".digit-slot");
+        }
+
+        function setDays(value, withAnimation) {
+          var normalized = isFinite(value) ? Math.max(0, Math.floor(value)) : START_ANIMATION_VALUE;
+          var dayWord = getRussianDayWord(normalized);
+          var nextDigits = getDigits(normalized);
+          var slots = ensureDigitSlots();
+
+          if (slots) {
+            for (var i = 0; i < slots.length; i += 1) {
+              var slot = slots[i];
+              var current = slot.querySelector(".digit-char.is-current");
+              var nextValue = nextDigits[i];
+
+              if (!current) {
+                var fallback = createDigitNode(nextValue);
+                fallback.classList.add("is-current");
+                slot.innerHTML = "";
+                slot.appendChild(fallback);
+                continue;
+              }
+
+              if (current.textContent === nextValue) continue;
+              if (!withAnimation) {
+                current.textContent = nextValue;
+                continue;
+              }
+
+              var incoming = createDigitNode(nextValue);
+              incoming.classList.add("is-in", "is-current");
+              current.classList.remove("is-current");
+              current.classList.add("is-out");
+              slot.appendChild(incoming);
+
+              (function (outNode, inNode) {
+                setTimeout(function () {
+                  if (outNode && outNode.parentNode) outNode.parentNode.removeChild(outNode);
+                  inNode.classList.remove("is-in");
+                }, 560);
+              })(current, incoming);
+            }
+          }
+
+          if (daysLabelNode) daysLabelNode.textContent = dayWord;
+        }
+
+        function getFullDaysLeftToSummer() {
+          var now = new Date();
+          return Math.max(0, Math.floor((TARGET_SUMMER_DATE.getTime() - now.getTime()) / MS_PER_DAY));
+        }
+
+        function animateDaysValue(fromValue, toValue) {
+          var start = Number(fromValue);
+          var end = Number(toValue);
+          if (!isFinite(start) || !isFinite(end)) {
+            setDays(START_ANIMATION_VALUE, false);
+            return;
+          }
+          if (start === end) {
+            setDays(end, false);
+            return;
+          }
+          var direction = start < end ? 1 : -1;
+          var current = start;
+          setDays(current, false);
+          var timer = setInterval(function () {
+            current += direction;
+            setDays(current, true);
+            if (current === end) clearInterval(timer);
+          }, TIMER_STEP_MS);
+        }
+
+        animateDaysValue(START_ANIMATION_VALUE, getFullDaysLeftToSummer());
+
+        var clickArea = document.getElementById("click_area");
+        if (clickArea && window.yandexHTML5BannerApi && typeof window.yandexHTML5BannerApi.getClickURLNum === "function") {
+          var yandexUrl = window.yandexHTML5BannerApi.getClickURLNum(1);
+          if (yandexUrl) clickArea.href = yandexUrl;
+        }
+      })();
+    </script>
+  </body>
+</html>
