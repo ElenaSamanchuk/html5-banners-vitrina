@@ -26,11 +26,12 @@
       h1 { margin: 0; font-size: clamp(26px, 5vw, 42px); letter-spacing: -0.02em; }
       .toolbar {
         display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-columns: repeat(5, minmax(0, 1fr));
         gap: 10px;
         margin: 14px 0;
       }
-      .toolbar select {
+      .toolbar select,
+      .toolbar button {
         width: 100%;
         height: 44px;
         border: 1px solid var(--line);
@@ -39,6 +40,11 @@
         border-radius: 10px;
         padding: 0 12px;
         font-size: 14px;
+      }
+      .toolbar button {
+        cursor: pointer;
+        background: #fff;
+        font-weight: 600;
       }
       .status {
         color: var(--muted);
@@ -115,6 +121,7 @@
         <select id="platform"><option value="all">Платформа: все</option></select>
         <select id="size"><option value="all">Размер: все</option></select>
         <select id="headline"><option value="all">Заголовок: все</option></select>
+        <button id="resetFilters" type="button">Сбросить фильтры</button>
       </section>
       <div class="status" id="status">Загрузка...</div>
       <section class="grid" id="grid"></section>
@@ -150,6 +157,7 @@
         platform: document.getElementById("platform"),
         size: document.getElementById("size"),
         headline: document.getElementById("headline"),
+        reset: document.getElementById("resetFilters"),
         grid: document.getElementById("grid"),
         status: document.getElementById("status"),
         empty: document.getElementById("empty")
@@ -231,15 +239,14 @@
         ui.empty.style.display = filtered.length ? "none" : "block";
       };
 
-      Promise.all([
-        fetch("./banner_manifest.json").then((r) => r.json()),
-        fetch("./archives_manifest.json").then((r) => r.json())
-      ]).then(([bannerManifest, archiveManifest]) => {
-        const archiveMap = new Map(archiveManifest.map((x) => [x.file, x.archive]));
-        const records = bannerManifest.copied
-          .map(parseFile)
+      fetch("./archives_manifest.json").then((r) => r.json()).then((archiveManifest) => {
+        const records = archiveManifest
+          .map((x) => parseFile(x.file))
           .filter(Boolean)
-          .map((r) => ({ ...r, archive: archiveMap.get(r.file) }))
+          .map((r) => {
+            const archiveEntry = archiveManifest.find((x) => x.file === r.file);
+            return { ...r, archive: archiveEntry ? archiveEntry.archive : "" };
+          })
           .filter((r) => Boolean(r.archive));
 
         const expectedSizes = ["300x250", "300x300", "300x500", "320x480", "336x280", "240x400", "300x600"];
@@ -256,6 +263,13 @@
 
         [ui.gender, ui.platform, ui.size, ui.headline].forEach((el) => {
           el.addEventListener("change", () => applyFilters(records));
+        });
+        ui.reset.addEventListener("click", () => {
+          ui.gender.value = "all";
+          ui.platform.value = "all";
+          ui.size.value = "all";
+          ui.headline.value = "all";
+          applyFilters(records);
         });
 
         applyFilters(records);
