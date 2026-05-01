@@ -229,6 +229,17 @@
         });
       };
 
+      const sortByLabel = (values, mapper) =>
+        [...values].sort((a, b) => mapper(a).localeCompare(mapper(b), "ru"));
+
+      const sortSizesAsc = (values) =>
+        [...values].sort((a, b) => {
+          const [aw, ah] = a.split("x").map(Number);
+          const [bw, bh] = b.split("x").map(Number);
+          if (aw !== bw) return aw - bw;
+          return ah - bh;
+        });
+
       const renderCard = (item) => {
         const maxW = 260;
         const maxH = 340;
@@ -286,10 +297,15 @@
         const foundHeadlines = new Set(records.map((r) => r.headlineKey));
         const missingHeadlines = expectedHeadlines.filter((h) => !foundHeadlines.has(h));
 
-        addOptions(ui.gender, ["f", "m"], (v) => labels.gender[v] || v);
-        addOptions(ui.platform, ["yandex", "vk"], (v) => labels.platform[v] || v);
-        addOptions(ui.size, expectedSizes.filter((s) => foundSizes.has(s)), (v) => labels.size[v] || v);
-        addOptions(ui.headline, expectedHeadlines.filter((h) => foundHeadlines.has(h)), (v) => labels.headline[v] || v);
+        const genderValues = sortByLabel(["f", "m"], (v) => labels.gender[v] || v);
+        const platformValues = sortByLabel(["yandex", "vk"], (v) => labels.platform[v] || v);
+        const sizeValues = sortSizesAsc(expectedSizes.filter((s) => foundSizes.has(s)));
+        const headlineValues = sortByLabel(expectedHeadlines.filter((h) => foundHeadlines.has(h)), (v) => labels.headline[v] || v);
+
+        addOptions(ui.gender, genderValues, (v) => labels.gender[v] || v);
+        addOptions(ui.platform, platformValues, (v) => labels.platform[v] || v);
+        addOptions(ui.size, sizeValues, (v) => labels.size[v] || v);
+        addOptions(ui.headline, headlineValues, (v) => labels.headline[v] || v);
 
         [ui.gender, ui.platform, ui.size, ui.headline].forEach((el) => {
           el.addEventListener("change", () => applyFilters(records));
