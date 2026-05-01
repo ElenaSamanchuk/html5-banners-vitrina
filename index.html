@@ -6,23 +6,20 @@
     <title>Витрина баннеров</title>
     <style>
       :root {
-        --bg: #07150d;
-        --bg-soft: #10261a;
-        --card: #133424;
-        --line: #2f6a4c;
-        --text: #ecfff2;
-        --muted: #b4dbc6;
-        --accent: #8bff4f;
+        --bg: #ffffff;
+        --bg-soft: #f4f7f5;
+        --card: #ffffff;
+        --line: #d9e3dc;
+        --text: #14221a;
+        --muted: #66756d;
+        --button: #00b923;
       }
       * { box-sizing: border-box; }
       body {
         margin: 0;
         font-family: Inter, "Segoe UI", Arial, sans-serif;
         color: var(--text);
-        background:
-          radial-gradient(820px 520px at 12% 2%, rgba(139, 255, 79, 0.17), transparent 65%),
-          radial-gradient(820px 420px at 90% 6%, rgba(40, 197, 113, 0.16), transparent 60%),
-          linear-gradient(180deg, var(--bg), #0b2016);
+        background: var(--bg);
       }
       .container { width: min(1220px, calc(100% - 28px)); margin: 0 auto; }
       header { padding: 28px 0 12px; }
@@ -57,7 +54,7 @@
       .card {
         border: 1px solid var(--line);
         border-radius: 14px;
-        background: linear-gradient(170deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+        background: var(--card);
         overflow: hidden;
       }
       .preview {
@@ -65,10 +62,10 @@
         padding: 12px;
         display: grid;
         place-items: center;
-        background: #0a1b13;
+        background: #f7f9f8;
       }
       .frame {
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        border: 1px solid #d7dfda;
         border-radius: 10px;
         background: #000;
         overflow: hidden;
@@ -88,8 +85,8 @@
         border: 0;
         display: grid;
         place-items: center;
-        background: linear-gradient(90deg, #7dfb49, #46d18e);
-        color: #0b2016;
+        background: var(--button);
+        color: #fff;
         font-size: 14px;
         font-weight: 700;
         text-decoration: none;
@@ -126,14 +123,25 @@
 
     <script>
       const labels = {
-        gender: { f: "ж", m: "м" },
+        gender: { f: "женщина", m: "мужчина" },
         platform: { vk: "VK", yandex: "Яндекс" },
         headline: {
-          soberi: "собери",
-          pridi: "приди",
-          podtyani: "подтяни",
-          siluet: "силуэт",
-          forma: "форма"
+          kubiki: "собери свои кубики на системе GF",
+          siluet_m: "прокачай силуэт к пляжному сезону вместе с Grow Food",
+          relief: "рельеф к лету это про питание, не только про зал",
+          forma: "собери свою форму на системе питания Grow Food",
+          pridi: "приди в форму, о которой мечтала вместе с системой Grow Food",
+          podtyani: "подтяни силуэт на системе питания Grow Food",
+          siluet_f: "стройный силуэт это система, а не диета"
+        },
+        size: {
+          "300x250": "300×250",
+          "300x300": "300×300",
+          "300x500": "300×500",
+          "320x480": "320×480",
+          "336x280": "336×280",
+          "240x400": "240×400",
+          "300x600": "300×600"
         }
       };
 
@@ -149,10 +157,29 @@
 
       const parseFile = (name) => {
         const m = name.match(/^index_(\d+x\d+)_(f|m)_([a-z0-9-]+)_(vk|yandex)\.html$/);
-        if (!m) return null;
-        const [, size, gender, headline, platform] = m;
-        const [width, height] = size.split("x").map(Number);
-        return { file: name, size, gender, headline, platform, width, height };
+        if (m) {
+          const [, size, gender, headline, platform] = m;
+          const [width, height] = size.split("x").map(Number);
+          const headlineKey = headline === "siluet" && gender === "f" ? "siluet_f" : headline;
+          return { file: name, size, gender, headline, headlineKey, platform, width, height };
+        }
+
+        const mMale = name.match(/^index_(\d+x\d+)_(kubiki|relief|siluet)\.html$/);
+        if (mMale) {
+          const [, size, headline] = mMale;
+          const [width, height] = size.split("x").map(Number);
+          const headlineKey = headline === "siluet" ? "siluet_m" : headline;
+          return { file: name, size, gender: "m", headline, headlineKey, platform: "yandex", width, height };
+        }
+
+        const mSingle = name.match(/^index_(relief|siluet)\.html$/);
+        if (mSingle) {
+          const headline = mSingle[1];
+          const headlineKey = headline === "siluet" ? "siluet_m" : "relief";
+          return { file: name, size: "300x250", gender: "m", headline, headlineKey, platform: "yandex", width: 300, height: 250 };
+        }
+
+        return null;
       };
 
       const addOptions = (select, values, mapper = (v) => v) => {
@@ -176,7 +203,7 @@
         card.innerHTML = `
           <a class="preview" href="${item.file}" target="_blank" rel="noopener" title="Открыть баннер">
             <div class="frame" style="width:${frameW}px; height:${frameH}px;">
-              <iframe src="${item.file}" loading="lazy" width="${item.width}" height="${item.height}"
+              <iframe src="${item.file}" width="${item.width}" height="${item.height}"
                 style="transform:scale(${scale}); width:${item.width}px; height:${item.height}px;"></iframe>
             </div>
           </a>
@@ -215,16 +242,29 @@
           .map((r) => ({ ...r, archive: archiveMap.get(r.file) }))
           .filter((r) => Boolean(r.archive));
 
-        addOptions(ui.gender, [...new Set(records.map((r) => r.gender))], (v) => labels.gender[v] || v);
-        addOptions(ui.platform, [...new Set(records.map((r) => r.platform))], (v) => labels.platform[v] || v);
-        addOptions(ui.size, [...new Set(records.map((r) => r.size))].sort());
-        addOptions(ui.headline, [...new Set(records.map((r) => r.headline))], (v) => labels.headline[v] || v);
+        const expectedSizes = ["300x250", "300x300", "300x500", "320x480", "336x280", "240x400", "300x600"];
+        const foundSizes = new Set(records.map((r) => r.size));
+        const missingSizes = expectedSizes.filter((s) => !foundSizes.has(s));
+        const expectedHeadlines = ["kubiki", "siluet_m", "relief", "forma", "pridi", "podtyani", "siluet_f"];
+        const foundHeadlines = new Set(records.map((r) => r.headlineKey));
+        const missingHeadlines = expectedHeadlines.filter((h) => !foundHeadlines.has(h));
+
+        addOptions(ui.gender, ["f", "m"], (v) => labels.gender[v] || v);
+        addOptions(ui.platform, ["yandex", "vk"], (v) => labels.platform[v] || v);
+        addOptions(ui.size, expectedSizes.filter((s) => foundSizes.has(s)), (v) => labels.size[v] || v);
+        addOptions(ui.headline, expectedHeadlines.filter((h) => foundHeadlines.has(h)), (v) => labels.headline[v] || v);
 
         [ui.gender, ui.platform, ui.size, ui.headline].forEach((el) => {
           el.addEventListener("change", () => applyFilters(records));
         });
 
         applyFilters(records);
+        if (missingSizes.length || missingHeadlines.length) {
+          const extra = [];
+          if (missingSizes.length) extra.push("размеры: " + missingSizes.map((s) => labels.size[s] || s).join(", "));
+          if (missingHeadlines.length) extra.push("заголовки: " + missingHeadlines.map((h) => labels.headline[h] || h).join("; "));
+          ui.status.textContent += " | отсутствуют: " + extra.join(" | ");
+        }
       }).catch(() => {
         ui.status.textContent = "Ошибка загрузки данных витрины.";
       });

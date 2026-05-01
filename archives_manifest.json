@@ -16,6 +16,18 @@
     "archive": "archives/index_240x400_f_soberi_vk.zip"
   },
   {
+    "file": "index_240x400_kubiki.html",
+    "archive": "archives/index_240x400_kubiki.zip"
+  },
+  {
+    "file": "index_240x400_relief.html",
+    "archive": "archives/index_240x400_relief.zip"
+  },
+  {
+    "file": "index_240x400_siluet.html",
+    "archive": "archives/index_240x400_siluet.zip"
+  },
+  {
     "file": "index_300x250_f_forma_vk.html",
     "archive": "archives/index_300x250_f_forma_vk.zip"
   },
@@ -72,6 +84,18 @@
     "archive": "archives/index_300x300_f_soberi_yandex.zip"
   },
   {
+    "file": "index_300x300_kubiki.html",
+    "archive": "archives/index_300x300_kubiki.zip"
+  },
+  {
+    "file": "index_300x300_relief.html",
+    "archive": "archives/index_300x300_relief.zip"
+  },
+  {
+    "file": "index_300x300_siluet.html",
+    "archive": "archives/index_300x300_siluet.zip"
+  },
+  {
     "file": "index_300x500_f_podtyani_yandex.html",
     "archive": "archives/index_300x500_f_podtyani_yandex.zip"
   },
@@ -86,6 +110,18 @@
   {
     "file": "index_300x500_f_soberi_yandex.html",
     "archive": "archives/index_300x500_f_soberi_yandex.zip"
+  },
+  {
+    "file": "index_300x500_kubiki.html",
+    "archive": "archives/index_300x500_kubiki.zip"
+  },
+  {
+    "file": "index_300x500_relief.html",
+    "archive": "archives/index_300x500_relief.zip"
+  },
+  {
+    "file": "index_300x500_siluet.html",
+    "archive": "archives/index_300x500_siluet.zip"
   },
   {
     "file": "index_300x600_f_podtyani_vk.html",
@@ -104,6 +140,18 @@
     "archive": "archives/index_300x600_f_soberi_vk.zip"
   },
   {
+    "file": "index_300x600_kubiki.html",
+    "archive": "archives/index_300x600_kubiki.zip"
+  },
+  {
+    "file": "index_300x600_relief.html",
+    "archive": "archives/index_300x600_relief.zip"
+  },
+  {
+    "file": "index_300x600_siluet.html",
+    "archive": "archives/index_300x600_siluet.zip"
+  },
+  {
     "file": "index_320x480_f_podtyani_yandex.html",
     "archive": "archives/index_320x480_f_podtyani_yandex.zip"
   },
@@ -120,6 +168,18 @@
     "archive": "archives/index_320x480_f_soberi_yandex.zip"
   },
   {
+    "file": "index_320x480_kubiki.html",
+    "archive": "archives/index_320x480_kubiki.zip"
+  },
+  {
+    "file": "index_320x480_relief.html",
+    "archive": "archives/index_320x480_relief.zip"
+  },
+  {
+    "file": "index_320x480_siluet.html",
+    "archive": "archives/index_320x480_siluet.zip"
+  },
+  {
     "file": "index_336x280_f_podtyani_yandex.html",
     "archive": "archives/index_336x280_f_podtyani_yandex.zip"
   },
@@ -134,5 +194,25 @@
   {
     "file": "index_336x280_f_soberi_yandex.html",
     "archive": "archives/index_336x280_f_soberi_yandex.zip"
+  },
+  {
+    "file": "index_336x280_kubiki.html",
+    "archive": "archives/index_336x280_kubiki.zip"
+  },
+  {
+    "file": "index_336x280_relief.html",
+    "archive": "archives/index_336x280_relief.zip"
+  },
+  {
+    "file": "index_336x280_siluet.html",
+    "archive": "archives/index_336x280_siluet.zip"
+  },
+  {
+    "file": "index_relief.html",
+    "archive": "archives/index_relief.zip"
+  },
+  {
+    "file": "index_siluet.html",
+    "archive": "archives/index_siluet.zip"
   }
 ]
