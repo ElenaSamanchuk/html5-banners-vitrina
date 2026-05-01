@@ -98,11 +98,6 @@
         transform-origin: top left;
         display: block;
       }
-      object {
-        border: 0;
-        transform-origin: top left;
-        display: block;
-      }
       .download {
         margin: 10px;
         height: 40px;
@@ -150,7 +145,7 @@
 
     <script>
       const labels = {
-        gender: { f: "женщина", m: "мужчина" },
+        gender: { zh: "женщина", m: "мужчина" },
         platform: { vk: "VK", yandex: "Яндекс" },
         headline: {
           kubiki: "собери свои кубики на системе GF",
@@ -183,33 +178,6 @@
         empty: document.getElementById("empty")
       };
 
-      const parseFile = (name) => {
-        const m = name.match(/^index_(\d+x\d+)_(f|m)_([a-z0-9-]+)_(vk|yandex)\.html$/);
-        if (m) {
-          const [, size, gender, headline, platform] = m;
-          const [width, height] = size.split("x").map(Number);
-          const headlineKey = headline === "siluet" && gender === "f" ? "siluet_f" : headline;
-          return { file: name, size, gender, headline, headlineKey, platform, width, height };
-        }
-
-        const mMale = name.match(/^index_(\d+x\d+)_(kubiki|relief|siluet)\.html$/);
-        if (mMale) {
-          const [, size, headline] = mMale;
-          const [width, height] = size.split("x").map(Number);
-          const headlineKey = headline === "siluet" ? "siluet_m" : headline;
-          return { file: name, size, gender: "m", headline, headlineKey, platform: "yandex", width, height };
-        }
-
-        const mSingle = name.match(/^index_(relief|siluet)\.html$/);
-        if (mSingle) {
-          const headline = mSingle[1];
-          const headlineKey = headline === "siluet" ? "siluet_m" : "relief";
-          return { file: name, size: "300x250", gender: "m", headline, headlineKey, platform: "yandex", width: 300, height: 250 };
-        }
-
-        return null;
-      };
-
       const addOptions = (select, values, mapper = (v) => v) => {
         values.forEach((value) => {
           const opt = document.createElement("option");
@@ -240,10 +208,10 @@
         const card = document.createElement("article");
         card.className = "card";
         card.innerHTML = `
-          <a class="preview" href="${item.file}" target="_blank" rel="noopener" title="Открыть баннер">
+          <a class="preview" href="${item.preview}" target="_blank" rel="noopener" title="Открыть баннер">
             <div class="frame" style="width:${frameW}px; height:${frameH}px;">
-              <object data="${item.file}" type="text/html" width="${item.width}" height="${item.height}"
-                style="transform:scale(${scale}); width:${item.width}px; height:${item.height}px;"></object>
+              <iframe src="${item.preview}" width="${item.width}" height="${item.height}"
+                style="transform:scale(${scale}); width:${item.width}px; height:${item.height}px;"></iframe>
             </div>
           </a>
           <a class="download" href="${item.archive}" download>Скачать архив</a>
@@ -271,14 +239,21 @@
       };
 
       fetch("./archives_manifest.json").then((r) => r.json()).then((archiveManifest) => {
-        const records = archiveManifest
-          .map((x) => parseFile(x.file))
-          .filter(Boolean)
-          .map((r) => {
-            const archiveEntry = archiveManifest.find((x) => x.file === r.file);
-            return { ...r, archive: archiveEntry ? archiveEntry.archive : "" };
-          })
-          .filter((r) => Boolean(r.archive));
+        const records = archiveManifest.map((x) => {
+          const [width, height] = x.size.split("x").map(Number);
+          const headlineKey = x.headline === "siluet" && x.gender === "zh" ? "siluet_f" : (x.headline === "siluet" ? "siluet_m" : x.headline);
+          return {
+            archive: x.archive,
+            preview: x.preview,
+            size: x.size,
+            gender: x.gender,
+            platform: x.platform,
+            headline: x.headline,
+            headlineKey,
+            width,
+            height
+          };
+        });
 
         const expectedSizes = ["300x250", "300x300", "300x500", "320x480", "336x280", "240x400", "300x600"];
         const foundSizes = new Set(records.map((r) => r.size));
@@ -287,7 +262,7 @@
         const foundHeadlines = new Set(records.map((r) => r.headlineKey));
         const missingHeadlines = expectedHeadlines.filter((h) => !foundHeadlines.has(h));
 
-        const genderValues = sortByLabel(["f", "m"], (v) => labels.gender[v] || v);
+        const genderValues = sortByLabel(["m", "zh"], (v) => labels.gender[v] || v);
         const platformValues = sortByLabel(["yandex", "vk"], (v) => labels.platform[v] || v);
         const sizeValues = sortSizesAsc(expectedSizes.filter((s) => foundSizes.has(s)));
         const headlineValues = sortByLabel(expectedHeadlines.filter((h) => foundHeadlines.has(h)), (v) => labels.headline[v] || v);

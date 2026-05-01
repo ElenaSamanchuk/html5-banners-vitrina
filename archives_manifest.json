@@ -1,218 +1,450 @@
 [
   {
-    "file": "index_240x400_f_podtyani_vk.html",
-    "archive": "archives/index_240x400_f_podtyani_vk.zip"
+    "archive": "archives/240x400_m_kubiki_vk.zip",
+    "preview": "previews/240x400_m_kubiki_vk.html",
+    "size": "240x400",
+    "gender": "m",
+    "headline": "kubiki",
+    "platform": "vk"
   },
   {
-    "file": "index_240x400_f_pridi_vk.html",
-    "archive": "archives/index_240x400_f_pridi_vk.zip"
+    "archive": "archives/240x400_m_relief_vk.zip",
+    "preview": "previews/240x400_m_relief_vk.html",
+    "size": "240x400",
+    "gender": "m",
+    "headline": "relief",
+    "platform": "vk"
   },
   {
-    "file": "index_240x400_f_siluet_vk.html",
-    "archive": "archives/index_240x400_f_siluet_vk.zip"
+    "archive": "archives/240x400_m_siluet_vk.zip",
+    "preview": "previews/240x400_m_siluet_vk.html",
+    "size": "240x400",
+    "gender": "m",
+    "headline": "siluet",
+    "platform": "vk"
   },
   {
-    "file": "index_240x400_f_soberi_vk.html",
-    "archive": "archives/index_240x400_f_soberi_vk.zip"
+    "archive": "archives/240x400_zh_podtyani_vk.zip",
+    "preview": "previews/240x400_zh_podtyani_vk.html",
+    "size": "240x400",
+    "gender": "zh",
+    "headline": "podtyani",
+    "platform": "vk"
   },
   {
-    "file": "index_240x400_kubiki.html",
-    "archive": "archives/index_240x400_kubiki.zip"
+    "archive": "archives/240x400_zh_pridi_vk.zip",
+    "preview": "previews/240x400_zh_pridi_vk.html",
+    "size": "240x400",
+    "gender": "zh",
+    "headline": "pridi",
+    "platform": "vk"
   },
   {
-    "file": "index_240x400_relief.html",
-    "archive": "archives/index_240x400_relief.zip"
+    "archive": "archives/240x400_zh_siluet_vk.zip",
+    "preview": "previews/240x400_zh_siluet_vk.html",
+    "size": "240x400",
+    "gender": "zh",
+    "headline": "siluet",
+    "platform": "vk"
   },
   {
-    "file": "index_240x400_siluet.html",
-    "archive": "archives/index_240x400_siluet.zip"
+    "archive": "archives/240x400_zh_soberi_vk.zip",
+    "preview": "previews/240x400_zh_soberi_vk.html",
+    "size": "240x400",
+    "gender": "zh",
+    "headline": "soberi",
+    "platform": "vk"
   },
   {
-    "file": "index_300x250_f_forma_vk.html",
-    "archive": "archives/index_300x250_f_forma_vk.zip"
+    "archive": "archives/300x250_m_kubiki_vk.zip",
+    "preview": "previews/300x250_m_kubiki_vk.html",
+    "size": "300x250",
+    "gender": "m",
+    "headline": "kubiki",
+    "platform": "vk"
   },
   {
-    "file": "index_300x250_f_forma_yandex.html",
-    "archive": "archives/index_300x250_f_forma_yandex.zip"
+    "archive": "archives/300x250_m_kubiki_yandex.zip",
+    "preview": "previews/300x250_m_kubiki_yandex.html",
+    "size": "300x250",
+    "gender": "m",
+    "headline": "kubiki",
+    "platform": "yandex"
   },
   {
-    "file": "index_300x250_f_podtyani_vk.html",
-    "archive": "archives/index_300x250_f_podtyani_vk.zip"
+    "archive": "archives/300x250_m_relief_vk.zip",
+    "preview": "previews/300x250_m_relief_vk.html",
+    "size": "300x250",
+    "gender": "m",
+    "headline": "relief",
+    "platform": "vk"
   },
   {
-    "file": "index_300x250_f_podtyani_yandex.html",
-    "archive": "archives/index_300x250_f_podtyani_yandex.zip"
+    "archive": "archives/300x250_m_relief_yandex.zip",
+    "preview": "previews/300x250_m_relief_yandex.html",
+    "size": "300x250",
+    "gender": "m",
+    "headline": "relief",
+    "platform": "yandex"
   },
   {
-    "file": "index_300x250_f_pridi_vk.html",
-    "archive": "archives/index_300x250_f_pridi_vk.zip"
+    "archive": "archives/300x250_m_siluet_vk.zip",
+    "preview": "previews/300x250_m_siluet_vk.html",
+    "size": "300x250",
+    "gender": "m",
+    "headline": "siluet",
+    "platform": "vk"
   },
   {
-    "file": "index_300x250_f_pridi_yandex.html",
-    "archive": "archives/index_300x250_f_pridi_yandex.zip"
+    "archive": "archives/300x250_m_siluet_yandex.zip",
+    "preview": "previews/300x250_m_siluet_yandex.html",
+    "size": "300x250",
+    "gender": "m",
+    "headline": "siluet",
+    "platform": "yandex"
   },
   {
-    "file": "index_300x250_f_siluet_vk.html",
-    "archive": "archives/index_300x250_f_siluet_vk.zip"
+    "archive": "archives/300x250_zh_podtyani_vk.zip",
+    "preview": "previews/300x250_zh_podtyani_vk.html",
+    "size": "300x250",
+    "gender": "zh",
+    "headline": "podtyani",
+    "platform": "vk"
   },
   {
-    "file": "index_300x250_f_siluet_yandex.html",
-    "archive": "archives/index_300x250_f_siluet_yandex.zip"
+    "archive": "archives/300x250_zh_podtyani_yandex.zip",
+    "preview": "previews/300x250_zh_podtyani_yandex.html",
+    "size": "300x250",
+    "gender": "zh",
+    "headline": "podtyani",
+    "platform": "yandex"
   },
   {
-    "file": "index_300x250_f_soberi_vk.html",
-    "archive": "archives/index_300x250_f_soberi_vk.zip"
+    "archive": "archives/300x250_zh_pridi_vk.zip",
+    "preview": "previews/300x250_zh_pridi_vk.html",
+    "size": "300x250",
+    "gender": "zh",
+    "headline": "pridi",
+    "platform": "vk"
   },
   {
-    "file": "index_300x250_f_soberi_yandex.html",
-    "archive": "archives/index_300x250_f_soberi_yandex.zip"
+    "archive": "archives/300x250_zh_pridi_yandex.zip",
+    "preview": "previews/300x250_zh_pridi_yandex.html",
+    "size": "300x250",
+    "gender": "zh",
+    "headline": "pridi",
+    "platform": "yandex"
   },
   {
-    "file": "index_300x300_f_podtyani_yandex.html",
-    "archive": "archives/index_300x300_f_podtyani_yandex.zip"
+    "archive": "archives/300x250_zh_siluet_vk.zip",
+    "preview": "previews/300x250_zh_siluet_vk.html",
+    "size": "300x250",
+    "gender": "zh",
+    "headline": "siluet",
+    "platform": "vk"
   },
   {
-    "file": "index_300x300_f_pridi_yandex.html",
-    "archive": "archives/index_300x300_f_pridi_yandex.zip"
+    "archive": "archives/300x250_zh_siluet_yandex.zip",
+    "preview": "previews/300x250_zh_siluet_yandex.html",
+    "size": "300x250",
+    "gender": "zh",
+    "headline": "siluet",
+    "platform": "yandex"
   },
   {
-    "file": "index_300x300_f_siluet_yandex.html",
-    "archive": "archives/index_300x300_f_siluet_yandex.zip"
+    "archive": "archives/300x250_zh_soberi_vk.zip",
+    "preview": "previews/300x250_zh_soberi_vk.html",
+    "size": "300x250",
+    "gender": "zh",
+    "headline": "soberi",
+    "platform": "vk"
   },
   {
-    "file": "index_300x300_f_soberi_yandex.html",
-    "archive": "archives/index_300x300_f_soberi_yandex.zip"
+    "archive": "archives/300x250_zh_soberi_yandex.zip",
+    "preview": "previews/300x250_zh_soberi_yandex.html",
+    "size": "300x250",
+    "gender": "zh",
+    "headline": "soberi",
+    "platform": "yandex"
   },
   {
-    "file": "index_300x300_kubiki.html",
-    "archive": "archives/index_300x300_kubiki.zip"
+    "archive": "archives/300x300_m_kubiki_yandex.zip",
+    "preview": "previews/300x300_m_kubiki_yandex.html",
+    "size": "300x300",
+    "gender": "m",
+    "headline": "kubiki",
+    "platform": "yandex"
   },
   {
-    "file": "index_300x300_relief.html",
-    "archive": "archives/index_300x300_relief.zip"
+    "archive": "archives/300x300_m_relief_yandex.zip",
+    "preview": "previews/300x300_m_relief_yandex.html",
+    "size": "300x300",
+    "gender": "m",
+    "headline": "relief",
+    "platform": "yandex"
   },
   {
-    "file": "index_300x300_siluet.html",
-    "archive": "archives/index_300x300_siluet.zip"
+    "archive": "archives/300x300_m_siluet_yandex.zip",
+    "preview": "previews/300x300_m_siluet_yandex.html",
+    "size": "300x300",
+    "gender": "m",
+    "headline": "siluet",
+    "platform": "yandex"
   },
   {
-    "file": "index_300x500_f_podtyani_yandex.html",
-    "archive": "archives/index_300x500_f_podtyani_yandex.zip"
+    "archive": "archives/300x300_zh_podtyani_yandex.zip",
+    "preview": "previews/300x300_zh_podtyani_yandex.html",
+    "size": "300x300",
+    "gender": "zh",
+    "headline": "podtyani",
+    "platform": "yandex"
   },
   {
-    "file": "index_300x500_f_pridi_yandex.html",
-    "archive": "archives/index_300x500_f_pridi_yandex.zip"
+    "archive": "archives/300x300_zh_pridi_yandex.zip",
+    "preview": "previews/300x300_zh_pridi_yandex.html",
+    "size": "300x300",
+    "gender": "zh",
+    "headline": "pridi",
+    "platform": "yandex"
   },
   {
-    "file": "index_300x500_f_siluet_yandex.html",
-    "archive": "archives/index_300x500_f_siluet_yandex.zip"
+    "archive": "archives/300x300_zh_siluet_yandex.zip",
+    "preview": "previews/300x300_zh_siluet_yandex.html",
+    "size": "300x300",
+    "gender": "zh",
+    "headline": "siluet",
+    "platform": "yandex"
   },
   {
-    "file": "index_300x500_f_soberi_yandex.html",
-    "archive": "archives/index_300x500_f_soberi_yandex.zip"
+    "archive": "archives/300x300_zh_soberi_yandex.zip",
+    "preview": "previews/300x300_zh_soberi_yandex.html",
+    "size": "300x300",
+    "gender": "zh",
+    "headline": "soberi",
+    "platform": "yandex"
   },
   {
-    "file": "index_300x500_kubiki.html",
-    "archive": "archives/index_300x500_kubiki.zip"
+    "archive": "archives/300x500_m_kubiki_yandex.zip",
+    "preview": "previews/300x500_m_kubiki_yandex.html",
+    "size": "300x500",
+    "gender": "m",
+    "headline": "kubiki",
+    "platform": "yandex"
   },
   {
-    "file": "index_300x500_relief.html",
-    "archive": "archives/index_300x500_relief.zip"
+    "archive": "archives/300x500_m_relief_yandex.zip",
+    "preview": "previews/300x500_m_relief_yandex.html",
+    "size": "300x500",
+    "gender": "m",
+    "headline": "relief",
+    "platform": "yandex"
   },
   {
-    "file": "index_300x500_siluet.html",
-    "archive": "archives/index_300x500_siluet.zip"
+    "archive": "archives/300x500_m_siluet_yandex.zip",
+    "preview": "previews/300x500_m_siluet_yandex.html",
+    "size": "300x500",
+    "gender": "m",
+    "headline": "siluet",
+    "platform": "yandex"
   },
   {
-    "file": "index_300x600_f_podtyani_vk.html",
-    "archive": "archives/index_300x600_f_podtyani_vk.zip"
+    "archive": "archives/300x500_zh_podtyani_yandex.zip",
+    "preview": "previews/300x500_zh_podtyani_yandex.html",
+    "size": "300x500",
+    "gender": "zh",
+    "headline": "podtyani",
+    "platform": "yandex"
   },
   {
-    "file": "index_300x600_f_pridi_vk.html",
-    "archive": "archives/index_300x600_f_pridi_vk.zip"
+    "archive": "archives/300x500_zh_pridi_yandex.zip",
+    "preview": "previews/300x500_zh_pridi_yandex.html",
+    "size": "300x500",
+    "gender": "zh",
+    "headline": "pridi",
+    "platform": "yandex"
   },
   {
-    "file": "index_300x600_f_siluet_vk.html",
-    "archive": "archives/index_300x600_f_siluet_vk.zip"
+    "archive": "archives/300x500_zh_siluet_yandex.zip",
+    "preview": "previews/300x500_zh_siluet_yandex.html",
+    "size": "300x500",
+    "gender": "zh",
+    "headline": "siluet",
+    "platform": "yandex"
   },
   {
-    "file": "index_300x600_f_soberi_vk.html",
-    "archive": "archives/index_300x600_f_soberi_vk.zip"
+    "archive": "archives/300x500_zh_soberi_yandex.zip",
+    "preview": "previews/300x500_zh_soberi_yandex.html",
+    "size": "300x500",
+    "gender": "zh",
+    "headline": "soberi",
+    "platform": "yandex"
   },
   {
-    "file": "index_300x600_kubiki.html",
-    "archive": "archives/index_300x600_kubiki.zip"
+    "archive": "archives/300x600_m_kubiki_vk.zip",
+    "preview": "previews/300x600_m_kubiki_vk.html",
+    "size": "300x600",
+    "gender": "m",
+    "headline": "kubiki",
+    "platform": "vk"
   },
   {
-    "file": "index_300x600_relief.html",
-    "archive": "archives/index_300x600_relief.zip"
+    "archive": "archives/300x600_m_relief_vk.zip",
+    "preview": "previews/300x600_m_relief_vk.html",
+    "size": "300x600",
+    "gender": "m",
+    "headline": "relief",
+    "platform": "vk"
   },
   {
-    "file": "index_300x600_siluet.html",
-    "archive": "archives/index_300x600_siluet.zip"
+    "archive": "archives/300x600_m_siluet_vk.zip",
+    "preview": "previews/300x600_m_siluet_vk.html",
+    "size": "300x600",
+    "gender": "m",
+    "headline": "siluet",
+    "platform": "vk"
   },
   {
-    "file": "index_320x480_f_podtyani_yandex.html",
-    "archive": "archives/index_320x480_f_podtyani_yandex.zip"
+    "archive": "archives/300x600_zh_podtyani_vk.zip",
+    "preview": "previews/300x600_zh_podtyani_vk.html",
+    "size": "300x600",
+    "gender": "zh",
+    "headline": "podtyani",
+    "platform": "vk"
   },
   {
-    "file": "index_320x480_f_pridi_yandex.html",
-    "archive": "archives/index_320x480_f_pridi_yandex.zip"
+    "archive": "archives/300x600_zh_pridi_vk.zip",
+    "preview": "previews/300x600_zh_pridi_vk.html",
+    "size": "300x600",
+    "gender": "zh",
+    "headline": "pridi",
+    "platform": "vk"
   },
   {
-    "file": "index_320x480_f_siluet_yandex.html",
-    "archive": "archives/index_320x480_f_siluet_yandex.zip"
+    "archive": "archives/300x600_zh_siluet_vk.zip",
+    "preview": "previews/300x600_zh_siluet_vk.html",
+    "size": "300x600",
+    "gender": "zh",
+    "headline": "siluet",
+    "platform": "vk"
   },
   {
-    "file": "index_320x480_f_soberi_yandex.html",
-    "archive": "archives/index_320x480_f_soberi_yandex.zip"
+    "archive": "archives/300x600_zh_soberi_vk.zip",
+    "preview": "previews/300x600_zh_soberi_vk.html",
+    "size": "300x600",
+    "gender": "zh",
+    "headline": "soberi",
+    "platform": "vk"
   },
   {
-    "file": "index_320x480_kubiki.html",
-    "archive": "archives/index_320x480_kubiki.zip"
+    "archive": "archives/320x480_m_kubiki_yandex.zip",
+    "preview": "previews/320x480_m_kubiki_yandex.html",
+    "size": "320x480",
+    "gender": "m",
+    "headline": "kubiki",
+    "platform": "yandex"
   },
   {
-    "file": "index_320x480_relief.html",
-    "archive": "archives/index_320x480_relief.zip"
+    "archive": "archives/320x480_m_relief_yandex.zip",
+    "preview": "previews/320x480_m_relief_yandex.html",
+    "size": "320x480",
+    "gender": "m",
+    "headline": "relief",
+    "platform": "yandex"
   },
   {
-    "file": "index_320x480_siluet.html",
-    "archive": "archives/index_320x480_siluet.zip"
+    "archive": "archives/320x480_m_siluet_yandex.zip",
+    "preview": "previews/320x480_m_siluet_yandex.html",
+    "size": "320x480",
+    "gender": "m",
+    "headline": "siluet",
+    "platform": "yandex"
   },
   {
-    "file": "index_336x280_f_podtyani_yandex.html",
-    "archive": "archives/index_336x280_f_podtyani_yandex.zip"
+    "archive": "archives/320x480_zh_podtyani_yandex.zip",
+    "preview": "previews/320x480_zh_podtyani_yandex.html",
+    "size": "320x480",
+    "gender": "zh",
+    "headline": "podtyani",
+    "platform": "yandex"
   },
   {
-    "file": "index_336x280_f_pridi_yandex.html",
-    "archive": "archives/index_336x280_f_pridi_yandex.zip"
+    "archive": "archives/320x480_zh_pridi_yandex.zip",
+    "preview": "previews/320x480_zh_pridi_yandex.html",
+    "size": "320x480",
+    "gender": "zh",
+    "headline": "pridi",
+    "platform": "yandex"
   },
   {
-    "file": "index_336x280_f_siluet_yandex.html",
-    "archive": "archives/index_336x280_f_siluet_yandex.zip"
+    "archive": "archives/320x480_zh_siluet_yandex.zip",
+    "preview": "previews/320x480_zh_siluet_yandex.html",
+    "size": "320x480",
+    "gender": "zh",
+    "headline": "siluet",
+    "platform": "yandex"
   },
   {
-    "file": "index_336x280_f_soberi_yandex.html",
-    "archive": "archives/index_336x280_f_soberi_yandex.zip"
+    "archive": "archives/320x480_zh_soberi_yandex.zip",
+    "preview": "previews/320x480_zh_soberi_yandex.html",
+    "size": "320x480",
+    "gender": "zh",
+    "headline": "soberi",
+    "platform": "yandex"
   },
   {
-    "file": "index_336x280_kubiki.html",
-    "archive": "archives/index_336x280_kubiki.zip"
+    "archive": "archives/336x280_m_kubiki_yandex.zip",
+    "preview": "previews/336x280_m_kubiki_yandex.html",
+    "size": "336x280",
+    "gender": "m",
+    "headline": "kubiki",
+    "platform": "yandex"
   },
   {
-    "file": "index_336x280_relief.html",
-    "archive": "archives/index_336x280_relief.zip"
+    "archive": "archives/336x280_m_relief_yandex.zip",
+    "preview": "previews/336x280_m_relief_yandex.html",
+    "size": "336x280",
+    "gender": "m",
+    "headline": "relief",
+    "platform": "yandex"
   },
   {
-    "file": "index_336x280_siluet.html",
-    "archive": "archives/index_336x280_siluet.zip"
+    "archive": "archives/336x280_m_siluet_yandex.zip",
+    "preview": "previews/336x280_m_siluet_yandex.html",
+    "size": "336x280",
+    "gender": "m",
+    "headline": "siluet",
+    "platform": "yandex"
   },
   {
-    "file": "index_relief.html",
-    "archive": "archives/index_relief.zip"
+    "archive": "archives/336x280_zh_podtyani_yandex.zip",
+    "preview": "previews/336x280_zh_podtyani_yandex.html",
+    "size": "336x280",
+    "gender": "zh",
+    "headline": "podtyani",
+    "platform": "yandex"
   },
   {
-    "file": "index_siluet.html",
-    "archive": "archives/index_siluet.zip"
+    "archive": "archives/336x280_zh_pridi_yandex.zip",
+    "preview": "previews/336x280_zh_pridi_yandex.html",
+    "size": "336x280",
+    "gender": "zh",
+    "headline": "pridi",
+    "platform": "yandex"
+  },
+  {
+    "archive": "archives/336x280_zh_siluet_yandex.zip",
+    "preview": "previews/336x280_zh_siluet_yandex.html",
+    "size": "336x280",
+    "gender": "zh",
+    "headline": "siluet",
+    "platform": "yandex"
+  },
+  {
+    "archive": "archives/336x280_zh_soberi_yandex.zip",
+    "preview": "previews/336x280_zh_soberi_yandex.html",
+    "size": "336x280",
+    "gender": "zh",
+    "headline": "soberi",
+    "platform": "yandex"
   }
 ]
