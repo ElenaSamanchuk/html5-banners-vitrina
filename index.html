@@ -3,17 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Витрина HTML5 баннеров</title>
+    <title>Витрина баннеров</title>
     <style>
       :root {
-        --bg: #070b16;
-        --bg2: #111a30;
-        --card: #121a2f;
-        --line: #2e3e68;
-        --text: #eaf0ff;
-        --muted: #a0b2d8;
-        --ok: #5be0aa;
-        --warn: #f4bc54;
+        --bg: #07150d;
+        --bg-soft: #10261a;
+        --card: #133424;
+        --line: #2f6a4c;
+        --text: #ecfff2;
+        --muted: #b4dbc6;
+        --accent: #8bff4f;
       }
       * { box-sizing: border-box; }
       body {
@@ -21,58 +20,37 @@
         font-family: Inter, "Segoe UI", Arial, sans-serif;
         color: var(--text);
         background:
-          radial-gradient(900px 500px at 8% 4%, rgba(91, 224, 170, 0.15), transparent 65%),
-          radial-gradient(1000px 650px at 88% 0%, rgba(127, 110, 255, 0.16), transparent 65%),
-          linear-gradient(180deg, var(--bg), #0b1224);
+          radial-gradient(820px 520px at 12% 2%, rgba(139, 255, 79, 0.17), transparent 65%),
+          radial-gradient(820px 420px at 90% 6%, rgba(40, 197, 113, 0.16), transparent 60%),
+          linear-gradient(180deg, var(--bg), #0b2016);
       }
-      .container {
-        width: min(1200px, calc(100% - 28px));
-        margin: 0 auto;
-      }
-      header {
-        padding: 34px 0 16px;
-      }
-      h1 {
-        margin: 0 0 10px;
-        font-size: clamp(26px, 5vw, 46px);
-        line-height: 1.05;
-      }
-      .lead {
-        margin: 0;
-        color: var(--muted);
-        max-width: 900px;
-        line-height: 1.45;
-      }
+      .container { width: min(1220px, calc(100% - 28px)); margin: 0 auto; }
+      header { padding: 28px 0 12px; }
+      h1 { margin: 0; font-size: clamp(26px, 5vw, 42px); letter-spacing: -0.02em; }
       .toolbar {
-        margin: 18px 0 14px;
         display: grid;
-        grid-template-columns: 1.2fr repeat(3, 1fr);
+        grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 10px;
+        margin: 14px 0;
       }
-      .toolbar input, .toolbar select {
+      .toolbar select {
         width: 100%;
-        height: 42px;
-        border: 1px solid #3a4c7d;
-        border-radius: 10px;
-        background: #101938;
+        height: 44px;
+        border: 1px solid var(--line);
+        background: var(--bg-soft);
         color: var(--text);
+        border-radius: 10px;
         padding: 0 12px;
+        font-size: 14px;
       }
-      .toolbar input::placeholder { color: #7f90b7; }
       .status {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
         color: var(--muted);
         font-size: 14px;
-        margin-bottom: 12px;
-      }
-      .status .ok {
-        color: var(--ok);
+        margin: 4px 0 12px;
       }
       .grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
         gap: 16px;
         padding-bottom: 28px;
       }
@@ -82,39 +60,17 @@
         background: linear-gradient(170deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
         overflow: hidden;
       }
-      .card-head {
-        padding: 12px;
-        border-bottom: 1px solid rgba(255,255,255,0.09);
-      }
-      .title {
-        margin: 0;
-        font-size: 15px;
-        font-weight: 700;
-      }
-      .meta {
-        margin-top: 7px;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
-      }
-      .tag {
-        font-size: 12px;
-        padding: 4px 9px;
-        border-radius: 999px;
-        background: #293a63;
-      }
       .preview {
-        min-height: 240px;
+        min-height: 210px;
+        padding: 12px;
         display: grid;
         place-items: center;
-        background: #0d142a;
-        padding: 12px;
-        position: relative;
+        background: #0a1b13;
       }
       .frame {
-        border: 1px solid rgba(255,255,255,0.18);
+        border: 1px solid rgba(255, 255, 255, 0.2);
         border-radius: 10px;
-        background: #02050b;
+        background: #000;
         overflow: hidden;
         display: grid;
         place-items: center;
@@ -124,234 +80,154 @@
         transform-origin: top left;
         display: block;
       }
-      .preview-state {
-        position: absolute;
-        left: 10px;
-        top: 10px;
-        font-size: 11px;
-        padding: 4px 8px;
-        border-radius: 999px;
-        background: rgba(0, 0, 0, 0.45);
-        border: 1px solid rgba(255, 255, 255, 0.14);
-      }
-      .preview-state.warn {
-        color: var(--warn);
-        border-color: rgba(244, 188, 84, 0.55);
-      }
-      .card-foot {
-        display: flex;
-        gap: 8px;
-        padding: 12px;
-      }
-      .btn {
-        flex: 1;
-        text-decoration: none;
-        color: #e4ecff;
-        border: 1px solid #4466aa;
-        height: 38px;
-        border-radius: 9px;
+      .download {
+        margin: 10px;
+        height: 40px;
+        width: calc(100% - 20px);
+        border-radius: 10px;
+        border: 0;
         display: grid;
         place-items: center;
-        font-size: 13px;
-        font-weight: 600;
-      }
-      .btn.primary {
-        background: linear-gradient(90deg, #44d89c, #6f80ff);
-        border-color: transparent;
-        color: #091225;
+        background: linear-gradient(90deg, #7dfb49, #46d18e);
+        color: #0b2016;
+        font-size: 14px;
+        font-weight: 700;
+        text-decoration: none;
       }
       .empty {
-        margin: 24px 0 38px;
-        border: 1px dashed #4a5e95;
-        color: var(--muted);
+        display: none;
+        margin: 20px 0 30px;
+        border: 1px dashed var(--line);
         border-radius: 12px;
         text-align: center;
-        padding: 24px;
-        display: none;
+        color: var(--muted);
+        padding: 22px;
       }
-      footer {
-        border-top: 1px solid rgba(255,255,255,0.09);
-        color: #8b9ec6;
-        font-size: 13px;
-        padding: 16px 0 28px;
-      }
-      @media (max-width: 900px) {
+      @media (max-width: 920px) {
         .toolbar { grid-template-columns: 1fr; }
       }
     </style>
   </head>
   <body>
     <header class="container">
-      <h1>Витрина HTML5 баннеров</h1>
-      <p class="lead">
-        Чистый проект только для просмотра и скачивания баннеров. В карточке каждого баннера доступно живое превью,
-        открытие отдельной страницы и загрузка HTML-файла.
-      </p>
+      <h1>Витрина баннеров</h1>
     </header>
-
     <main class="container">
       <section class="toolbar">
-        <input id="search" type="search" placeholder="Поиск: размер, платформа, заголовок..." />
-        <select id="platform"><option value="all">Все платформы</option></select>
-        <select id="size"><option value="all">Все размеры</option></select>
-        <select id="headline"><option value="all">Все заголовки</option></select>
+        <select id="gender"><option value="all">Гендер: все</option></select>
+        <select id="platform"><option value="all">Платформа: все</option></select>
+        <select id="size"><option value="all">Размер: все</option></select>
+        <select id="headline"><option value="all">Заголовок: все</option></select>
       </section>
-      <div class="status">
-        <span id="countText">Загрузка...</span>
-        <span class="ok" id="healthText"></span>
-      </div>
+      <div class="status" id="status">Загрузка...</div>
       <section class="grid" id="grid"></section>
-      <div class="empty" id="empty">Ничего не найдено по выбранным фильтрам.</div>
+      <div class="empty" id="empty">По выбранным фильтрам баннеров нет.</div>
     </main>
 
-    <footer class="container">
-      Если карточка отмечена как "ошибка превью", файл всё равно можно открыть и скачать кнопками ниже.
-    </footer>
-
     <script>
-      const ALIASES = { vk: "VK", yandex: "Яндекс", f: "женский" };
-
-      const prettify = (value) => ALIASES[value] || value;
-      const parseMeta = (file) => {
-        const stem = file.replace(".html", "");
-        const parts = stem.split("_");
-        const hasSize = /^\\d+x\\d+$/.test(parts[1] || "");
-        const size = hasSize ? parts[1] : "free";
-        const segment = hasSize ? (parts[2] || "general") : "general";
-        const headline = hasSize ? (parts[3] || "creative") : (parts[1] || "creative");
-        const platform = hasSize ? (parts[4] || "portfolio") : "portfolio";
-        const [width, height] = size === "free" ? [300, 250] : size.split("x").map(Number);
-        return { file, size, segment, headline, platform, width, height };
+      const labels = {
+        gender: { f: "ж", m: "м" },
+        platform: { vk: "VK", yandex: "Яндекс" },
+        headline: {
+          soberi: "собери",
+          pridi: "приди",
+          podtyani: "подтяни",
+          siluet: "силуэт",
+          forma: "форма"
+        }
       };
 
-      const els = {
-        search: document.getElementById("search"),
+      const ui = {
+        gender: document.getElementById("gender"),
         platform: document.getElementById("platform"),
         size: document.getElementById("size"),
         headline: document.getElementById("headline"),
         grid: document.getElementById("grid"),
-        countText: document.getElementById("countText"),
-        healthText: document.getElementById("healthText"),
+        status: document.getElementById("status"),
         empty: document.getElementById("empty")
       };
 
-      const fillSelect = (select, values) => {
-        values.forEach((v) => {
-          const option = document.createElement("option");
-          option.value = v;
-          option.textContent = prettify(v);
-          select.appendChild(option);
+      const parseFile = (name) => {
+        const m = name.match(/^index_(\d+x\d+)_(f|m)_([a-z0-9-]+)_(vk|yandex)\.html$/);
+        if (!m) return null;
+        const [, size, gender, headline, platform] = m;
+        const [width, height] = size.split("x").map(Number);
+        return { file: name, size, gender, headline, platform, width, height };
+      };
+
+      const addOptions = (select, values, mapper = (v) => v) => {
+        values.forEach((value) => {
+          const opt = document.createElement("option");
+          opt.value = value;
+          opt.textContent = mapper(value);
+          select.appendChild(opt);
         });
       };
 
       const renderCard = (item) => {
+        const maxW = 260;
+        const maxH = 340;
+        const scale = Math.min(maxW / item.width, maxH / item.height, 1);
+        const frameW = Math.round(item.width * scale);
+        const frameH = Math.round(item.height * scale);
+
         const card = document.createElement("article");
         card.className = "card";
-        const maxPreviewWidth = 290;
-        const maxPreviewHeight = 360;
-        const scale = Math.min(maxPreviewWidth / item.width, maxPreviewHeight / item.height, 1);
-        const frameWidth = Math.round(item.width * scale);
-        const frameHeight = Math.round(item.height * scale);
-        const title = `${prettify(item.headline)} • ${item.size}`;
-
         card.innerHTML = `
-          <div class="card-head">
-            <p class="title">${title}</p>
-            <div class="meta">
-              <span class="tag">${prettify(item.platform)}</span>
-              <span class="tag">${prettify(item.segment)}</span>
-              <span class="tag">${item.size}</span>
+          <a class="preview" href="${item.file}" target="_blank" rel="noopener" title="Открыть баннер">
+            <div class="frame" style="width:${frameW}px; height:${frameH}px;">
+              <iframe src="${item.file}" loading="lazy" width="${item.width}" height="${item.height}"
+                style="transform:scale(${scale}); width:${item.width}px; height:${item.height}px;"></iframe>
             </div>
-          </div>
-          <div class="preview">
-            <span class="preview-state">загрузка...</span>
-            <div class="frame" style="width:${frameWidth}px; height:${frameHeight}px;">
-              <iframe
-                src="${item.file}"
-                loading="lazy"
-                title="${title}"
-                width="${item.width}"
-                height="${item.height}"
-                style="transform:scale(${scale}); width:${item.width}px; height:${item.height}px;"
-              ></iframe>
-            </div>
-          </div>
-          <div class="card-foot">
-            <a class="btn" href="${item.file}" target="_blank" rel="noopener">Открыть</a>
-            <a class="btn primary" href="${item.file}" download>Скачать</a>
-          </div>
+          </a>
+          <a class="download" href="${item.archive}" download>Скачать архив</a>
         `;
-
-        const state = card.querySelector(".preview-state");
-        const frame = card.querySelector("iframe");
-        let loaded = false;
-        const timer = setTimeout(() => {
-          if (!loaded) {
-            state.textContent = "ошибка превью";
-            state.classList.add("warn");
-          }
-        }, 6000);
-
-        frame.addEventListener("load", () => {
-          loaded = true;
-          clearTimeout(timer);
-          state.textContent = "превью ок";
-        });
-
-        frame.addEventListener("error", () => {
-          loaded = false;
-          clearTimeout(timer);
-          state.textContent = "ошибка превью";
-          state.classList.add("warn");
-        });
-
         return card;
       };
 
-      const apply = (records) => {
-        const q = els.search.value.trim().toLowerCase();
-        const platform = els.platform.value;
-        const size = els.size.value;
-        const headline = els.headline.value;
+      const applyFilters = (records) => {
+        const g = ui.gender.value;
+        const p = ui.platform.value;
+        const s = ui.size.value;
+        const h = ui.headline.value;
 
-        const filtered = records.filter((item) => {
-          const byPlatform = platform === "all" || item.platform === platform;
-          const bySize = size === "all" || item.size === size;
-          const byHeadline = headline === "all" || item.headline === headline;
-          const byQ = q.length === 0 || `${item.file} ${item.platform} ${item.size} ${item.headline}`.toLowerCase().includes(q);
-          return byPlatform && bySize && byHeadline && byQ;
-        });
+        const filtered = records.filter((r) =>
+          (g === "all" || r.gender === g) &&
+          (p === "all" || r.platform === p) &&
+          (s === "all" || r.size === s) &&
+          (h === "all" || r.headline === h)
+        );
 
-        els.grid.innerHTML = "";
-        filtered.forEach((item) => els.grid.appendChild(renderCard(item)));
-        els.countText.textContent = `Показано ${filtered.length} из ${records.length}`;
-        els.healthText.textContent = `Файлы в проекте: ${records.length}`;
-        els.empty.style.display = filtered.length ? "none" : "block";
+        ui.grid.innerHTML = "";
+        filtered.forEach((item) => ui.grid.appendChild(renderCard(item)));
+        ui.status.textContent = `Показано ${filtered.length} из ${records.length}`;
+        ui.empty.style.display = filtered.length ? "none" : "block";
       };
 
-      fetch("./banner_manifest.json")
-        .then((res) => res.json())
-        .then((manifest) => {
-          const records = manifest.copied.map(parseMeta);
-          const platforms = [...new Set(records.map((x) => x.platform))].sort();
-          const sizes = [...new Set(records.map((x) => x.size))].sort();
-          const headlines = [...new Set(records.map((x) => x.headline))].sort();
+      Promise.all([
+        fetch("./banner_manifest.json").then((r) => r.json()),
+        fetch("./archives_manifest.json").then((r) => r.json())
+      ]).then(([bannerManifest, archiveManifest]) => {
+        const archiveMap = new Map(archiveManifest.map((x) => [x.file, x.archive]));
+        const records = bannerManifest.copied
+          .map(parseFile)
+          .filter(Boolean)
+          .map((r) => ({ ...r, archive: archiveMap.get(r.file) }))
+          .filter((r) => Boolean(r.archive));
 
-          fillSelect(els.platform, platforms);
-          fillSelect(els.size, sizes);
-          fillSelect(els.headline, headlines);
+        addOptions(ui.gender, [...new Set(records.map((r) => r.gender))], (v) => labels.gender[v] || v);
+        addOptions(ui.platform, [...new Set(records.map((r) => r.platform))], (v) => labels.platform[v] || v);
+        addOptions(ui.size, [...new Set(records.map((r) => r.size))].sort());
+        addOptions(ui.headline, [...new Set(records.map((r) => r.headline))], (v) => labels.headline[v] || v);
 
-          [els.search, els.platform, els.size, els.headline].forEach((el) => {
-            el.addEventListener("input", () => apply(records));
-            el.addEventListener("change", () => apply(records));
-          });
-
-          apply(records);
-        })
-        .catch(() => {
-          els.countText.textContent = "Не удалось загрузить список баннеров.";
-          els.healthText.textContent = "Проверьте banner_manifest.json";
+        [ui.gender, ui.platform, ui.size, ui.headline].forEach((el) => {
+          el.addEventListener("change", () => applyFilters(records));
         });
+
+        applyFilters(records);
+      }).catch(() => {
+        ui.status.textContent = "Ошибка загрузки данных витрины.";
+      });
     </script>
   </body>
 </html>
