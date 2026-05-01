@@ -151,7 +151,7 @@
           kubiki: "собери свои кубики на системе GF",
           siluet_m: "прокачай силуэт к пляжному сезону вместе с Grow Food",
           relief: "рельеф к лету это про питание, не только про зал",
-          forma: "собери свою форму на системе питания Grow Food",
+          soberi: "собери свою форму на системе питания Grow Food",
           pridi: "приди в форму, о которой мечтала вместе с системой Grow Food",
           podtyani: "подтяни силуэт на системе питания Grow Food",
           siluet_f: "стройный силуэт это система, а не диета"
@@ -258,7 +258,7 @@
         const expectedSizes = ["300x250", "300x300", "300x500", "320x480", "336x280", "240x400", "300x600"];
         const foundSizes = new Set(records.map((r) => r.size));
         const missingSizes = expectedSizes.filter((s) => !foundSizes.has(s));
-        const expectedHeadlines = ["kubiki", "siluet_m", "relief", "forma", "pridi", "podtyani", "siluet_f"];
+        const expectedHeadlines = ["kubiki", "siluet_m", "relief", "soberi", "pridi", "podtyani", "siluet_f"];
         const foundHeadlines = new Set(records.map((r) => r.headlineKey));
         const missingHeadlines = expectedHeadlines.filter((h) => !foundHeadlines.has(h));
 
