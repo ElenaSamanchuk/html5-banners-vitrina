@@ -26,9 +26,9 @@
       h1 { margin: 0; font-size: clamp(26px, 5vw, 42px); letter-spacing: -0.02em; }
       .toolbar {
         display: grid;
-        grid-template-columns: repeat(5, minmax(0, 1fr));
+        grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 10px;
-        margin: 14px 0;
+        margin: 14px 0 10px;
       }
       .toolbar select,
       .toolbar button {
@@ -41,10 +41,33 @@
         padding: 0 12px;
         font-size: 14px;
       }
+      .toolbar select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        padding-right: 36px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%2366756d' d='M1.41.59 6 5.17 10.59.59 12 2 6 8 0 2z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+        background-size: 12px 8px;
+      }
       .toolbar button {
         cursor: pointer;
         background: #fff;
         font-weight: 600;
+      }
+      .toolbar-actions {
+        margin-bottom: 8px;
+      }
+      .toolbar-actions button {
+        height: 40px;
+        border: 1px solid var(--line);
+        background: #fff;
+        border-radius: 10px;
+        padding: 0 14px;
+        cursor: pointer;
+        font-size: 14px;
+        color: var(--text);
       }
       .status {
         color: var(--muted);
@@ -79,6 +102,11 @@
         place-items: center;
       }
       iframe {
+        border: 0;
+        transform-origin: top left;
+        display: block;
+      }
+      object {
         border: 0;
         transform-origin: top left;
         display: block;
@@ -121,8 +149,10 @@
         <select id="platform"><option value="all">Платформа: все</option></select>
         <select id="size"><option value="all">Размер: все</option></select>
         <select id="headline"><option value="all">Заголовок: все</option></select>
-        <button id="resetFilters" type="button">Сбросить фильтры</button>
       </section>
+      <div class="toolbar-actions">
+        <button id="resetFilters" type="button">Сбросить фильтры</button>
+      </div>
       <div class="status" id="status">Загрузка...</div>
       <section class="grid" id="grid"></section>
       <div class="empty" id="empty">По выбранным фильтрам баннеров нет.</div>
@@ -211,8 +241,8 @@
         card.innerHTML = `
           <a class="preview" href="${item.file}" target="_blank" rel="noopener" title="Открыть баннер">
             <div class="frame" style="width:${frameW}px; height:${frameH}px;">
-              <iframe src="${item.file}" width="${item.width}" height="${item.height}"
-                style="transform:scale(${scale}); width:${item.width}px; height:${item.height}px;"></iframe>
+              <object data="${item.file}" type="text/html" width="${item.width}" height="${item.height}"
+                style="transform:scale(${scale}); width:${item.width}px; height:${item.height}px;"></object>
             </div>
           </a>
           <a class="download" href="${item.archive}" download>Скачать архив</a>
