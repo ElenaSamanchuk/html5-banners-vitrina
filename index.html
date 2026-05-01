@@ -26,9 +26,9 @@
       h1 { margin: 0; font-size: clamp(26px, 5vw, 42px); letter-spacing: -0.02em; }
       .toolbar {
         display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-columns: repeat(5, minmax(0, 1fr));
         gap: 10px;
-        margin: 14px 0 10px;
+        margin: 14px 0;
       }
       .toolbar select,
       .toolbar button {
@@ -60,19 +60,6 @@
         cursor: pointer;
         background: #fff;
         font-weight: 600;
-      }
-      .toolbar-actions {
-        margin-bottom: 8px;
-      }
-      .toolbar-actions button {
-        height: 40px;
-        border: 1px solid var(--line);
-        background: #fff;
-        border-radius: 10px;
-        padding: 0 14px;
-        cursor: pointer;
-        font-size: 14px;
-        color: var(--text);
       }
       .status {
         color: var(--muted);
@@ -154,10 +141,8 @@
         <select id="platform"><option value="all">Платформа: все</option></select>
         <select id="size"><option value="all">Размер: все</option></select>
         <select id="headline"><option value="all">Заголовок: все</option></select>
-      </section>
-      <div class="toolbar-actions">
         <button id="resetFilters" type="button">Сбросить фильтры</button>
-      </div>
+      </section>
       <div class="status" id="status">Загрузка...</div>
       <section class="grid" id="grid"></section>
       <div class="empty" id="empty">По выбранным фильтрам баннеров нет.</div>
