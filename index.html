@@ -211,7 +211,7 @@
         card.innerHTML = `
           <a class="preview" href="${item.preview}" target="_blank" rel="noopener" title="Открыть баннер">
             <div class="frame" style="width:${frameW}px; height:${frameH}px;">
-              <iframe src="${item.preview}" width="${item.width}" height="${item.height}"
+              <iframe src="about:blank" width="${item.width}" height="${item.height}"
                 data-src="${item.preview}"
                 style="transform:scale(${scale}); width:${item.width}px; height:${item.height}px;"></iframe>
             </div>
@@ -225,12 +225,29 @@
         const frames = Array.from(document.querySelectorAll("iframe[data-src]"));
         const activate = (frame) => {
           if (!frame || frame.dataset.loaded === "1") return;
-          frame.setAttribute("src", frame.dataset.src || "");
+          const targetSrc = frame.dataset.src || "";
+          frame.setAttribute("src", targetSrc);
           frame.dataset.loaded = "1";
+          frame.dataset.retried = frame.dataset.retried || "0";
+
+          // Retry once if browser painted an empty frame.
+          setTimeout(() => {
+            if (!frame.isConnected || frame.dataset.retried === "1") return;
+            try {
+              const doc = frame.contentDocument;
+              const hasVisualContent = Boolean(doc && doc.body && doc.body.children.length > 0);
+              if (hasVisualContent) return;
+            } catch (_) {
+              return;
+            }
+            frame.dataset.retried = "1";
+            frame.setAttribute("src", "about:blank");
+            setTimeout(() => frame.setAttribute("src", targetSrc), 120);
+          }, 1800);
         };
 
-        // Render first screen fast.
-        frames.slice(0, 8).forEach(activate);
+        // Load first viewport batch immediately.
+        frames.slice(0, 6).forEach(activate);
 
         if (!("IntersectionObserver" in window)) {
           frames.forEach(activate);
